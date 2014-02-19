@@ -66,59 +66,39 @@
 			</RegExp>
 	
 			<!-- actor -->
+            <!-- <img src='http://imgs3.adultempire.com/actors/618815t.jpg' alt='Amia Miley' title='Amia Miley' /><br /> -->
             <RegExp input="$$6" output="\1" dest="7+">
-				<RegExp input="$$1" output="&lt;actor&gt;&lt;thumb&gt;http://imgs1.adultempire.com/actors/\1t.jpg&lt;/thumb&gt;&lt;name&gt;\2&lt;/name&gt;&lt;/actor&gt;" dest="6">
-					<expression noclean="1" repeat="yes">&lt;img src=&apos;http://imgs[0-9]+\.adultempire\.com/actors/([0-9]+).\.jpg&apos; alt=&apos;(.*?)&apos;</expression>
+				<RegExp input="$$1" output="&lt;actor&gt;&lt;thumb&gt;\1t.jpg&lt;/thumb&gt;&lt;name&gt;\2&lt;/name&gt;&lt;/actor&gt;" dest="6">
+					<expression noclean="1" repeat="yes">&lt;img src=&apos;(http://imgs[0-9]+\.adultempire\.com/actors/[0-9]+).\.jpg&apos; alt=&apos;(.*?)&apos;</expression>
 				</RegExp>
 				<expression noclean="1"></expression>
             </RegExp>
             
 
 			<!-- genre -->
-			<!-- <h2>Categories</h2><p><a href="http://www.adultdvdempire.com/20/category/couples-porn-movies.html">Couples</a>, 
-					
-				
-					
-						<a href="http://www.adultdvdempire.com/3/category/feature-porn-movies.html">Feature</a>, 
-					
-				
-					
-						<a href="http://www.adultdvdempire.com/2312/category/widescreen-porn-movies.html">Widescreen</a></p>
-			-->
-			 <RegExp input="$$6" output="\1" dest="7+">
-				<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="6">
-					<expression noclean="1" repeat="yes">&lt;a href=&quot;http://www.adultdvdempire.com/[0-9]+/category/.+-porn-movies\.html&quot;&gt;(.*?)&lt;/a&gt;</expression>
+			 <RegExp input="$$5" output="\1" dest="7+">
+                 
+                <RegExp input="$$1" output="\1" dest="4">
+                    <expression noclean="1">&lt;h2&gt;Categories&lt;/h2&gt;(.*?)&lt;/div&gt;</expression>
+                </RegExp>
+                 
+				<RegExp input="$$4" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5">
+					<expression noclean="1" repeat="yes">&lt;a href=&quot;http://www.adultdvdempire.com/[0-9]+/category/.*?&quot;&gt;(.*?)&lt;/a&gt;</expression>
 				</RegExp>
-				<expression noclean="1"></expression>
+            <expression noclean="1"></expression>
             </RegExp>
 			
             
 							
 			<!-- fanart -->
 								
-			<RegExp input="$$6" output="&lt;fanart&gt;\1&lt;/fanart&gt;" dest="9+">
+			<RegExp input="$$6" output="&lt;fanart&gt;\1&lt;/fanart&gt;" dest="7+">
 				<RegExp input="$$2" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="6">
 					<expression noclean="1" repeat="yes">&lt;a rel=&quot;screenshots&quot; href=&quot;(http://caps[0-9]\.adultempire\.com/[a-z]/[0-9]+/[0-9]+/[0-9]+_[0-9]+_[0-9]+.?\.jpg)&quot;</expression>
 				</RegExp>
 				<expression noclean="1"></expression>
-			</RegExp>			
-    
-            
-            <!-- ジャンル</td><td>ドラマ／ミステリー／サスペンス</td> -->
-            <!-- ジャンル</td><td>ミステリー／音楽</td> -->
-            <!-- ジャンル</td><td>ドラマ</td> -->
-            <!-- 文字列の最後に区切り文字の／を追加して、ジャンルを切り出している -->
-            <RegExp input="$$1" output="\1／" dest="7">
-                    <expression>ジャンル&lt;/td&gt;&lt;td&gt;(.*?)&lt;/td&gt;</expression>
-            </RegExp>
-            
-            <RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="8+">
-                    <expression repeat="yes">(.*?)／</expression>
 			</RegExp>
-         
             
-            
-        
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
