@@ -15,21 +15,16 @@
 	
         
     
-    <GetSearchResults dest="8">
+    <GetSearchResults clearbuffers="no" dest="8">
 	<!-- http://www.adultdvdempire.com/700215/pirates-porn-movies.html -->
 	<!-- http://www.adultdvdempire.com/scenes/700215/pirates-porn-movies.html -->
-        <!-- <a href=" /700215/pirates-porn-movies.html" class="boxcover" title="Pirates"  
-            /scenes/1427158/pirates-2-blu-ray.html
-         -->
+        <!-- <a href=" /700215/pirates-porn-movies.html" class="boxcover" title="Pirates"  -->
         
-        <!-- <a href="/1320621/tight-end-porn-videos.html" class="boxcover" Category="GridViewVOD" Label="Boxcover"><img src="http://imgs1.adultempire.com/products/21/1320621.jpg" alt="Tight End Porn Video" title="Tight End Porn Video" width="135" height="190" itemprop="image" /></a><span class="title">9. <a href="/1320621/tight-end-porn-videos.html" title="Tight End" Category="GridViewVOD" Label="Title">Tight End</a></span><a href="/1320621/tight-end-porn-videos.html" class="ppm" Category="GridViewVOD" Label="Play Icon"> -->
-        
-        <!-- <a href=" /1457853/pirates-ii-stagnettis-revenge-r-rated-porn-movies.html" Category="GridViewDVD"  class="boxcover" Label="Boxcover"><img src="http://imgs1.adultempire.com/products/53/1457853.jpg" alt="Pirates II: Stagnettis Revenge (R-Rated) Porn Movie" title="Pirates II: Stagnettis Revenge (R-Rated) Porn Movie" width="135" height="190" itemprop="image" />
-         -->
+        <!-- <a href="/644028/italian-flair-porn-videos.html" class="boxcover" title="Italian Flair" -->
         
         <RegExp input="$$3" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://www.adultdvdempire.com/general/\1/\2&lt;/url&gt;&lt;url&gt;http://www.adultdvdempire.com/scenes/\1/\2&lt;/url&gt;&lt;/entity&gt;" dest="3">
-				<expression noclean="1" repeat="yes">&lt;a href=&quot; ?/([0-9]+)/(.*?\.html)&quot;.*?class=&quot;boxcover&quot;.*?Label=&quot;Boxcover&quot;&gt;&lt;img src=&quot;http://imgs[0-9]+.adultempire.com/products/[0-9]+/[0-9]+.jpg&quot; alt=&quot;(.*?)&quot; title=&quot;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://www.adultdvdempire.com/\1/\2&lt;/url&gt;&lt;url&gt;http://www.adultdvdempire.com/scenes/\1/\2&lt;/url&gt;/entity&gt;" dest="3+">
+				<expression noclean="1" repeat="yes">&lt;a href=&quot; ?/([0-9]+)/(.*?html)&quot; class=&quot;boxcover&quot; title=&quot;(.*?)&quot;</expression>
 			</RegExp>
 		<expression noclean="1"></expression>
 		</RegExp>
