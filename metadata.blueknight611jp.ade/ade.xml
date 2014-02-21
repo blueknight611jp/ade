@@ -7,7 +7,8 @@
 	
 	<!-- assume Title and year -->
 	<CreateSearchUrl clearbuffers="no" dest="5">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.adultdvdempire.com/allsearch/search?q=\1&lt;/url&gt;" dest="5">
+		<!-- RegExp input="$$1" output="&lt;url&gt;http://www.adultdvdempire.com/allsearch/search?q=\1&lt;/url&gt;" dest="5" -->
+        <RegExp input="$$1" output="&lt;url&gt;http://www.adultdvdempire.com/dvd/search?q=\1&lt;/url&gt;" dest="5">
 			<expression></expression>
 		</RegExp>
 		
