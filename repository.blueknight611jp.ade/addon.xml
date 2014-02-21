@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="metadata.blueknight611jp.ade"
+<addon id="repository.blueknight611jp.ade"
 		name="adult dvd empire Scraper"
 		version="0.0.1"
 		provider-name="blueknight611jp">
-		<requires>
+		<info compressed="false">
 				<import addon="xbmc.metadata" version="1.0"/>
 		</requires>
 		<extension point="xbmc.metadata.scraper.movies"
